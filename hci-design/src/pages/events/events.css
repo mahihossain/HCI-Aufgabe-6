@@ -1,0 +1,36 @@
+.title{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #10427A;
+}
+.ant-tabs-ink-bar{
+
+    background: #10427A;
+}
+
+.tab-text{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #10427A;
+}
+
+
+.primary{
+    color: #10427A !important;
+}
