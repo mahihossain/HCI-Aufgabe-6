@@ -30,7 +30,8 @@
     align-items: center;
     text-align: center;
     letter-spacing: -0.015em;
-
+    text-transform: none !important;
+    text-decoration: none;
     color: #10427A;
 }
 

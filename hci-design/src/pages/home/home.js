@@ -11,7 +11,7 @@ import {Link} from "react-router-dom";
 import EventItem from "../events/event";
 import Fab from "@mui/material/Fab";
 import Avatar from "@mui/material/Avatar";
-import MusicNoteIcon from '@mui/icons-material/MusicNote';
+import HeadphonesIcon from '@mui/icons-material/Headphones';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -78,7 +78,7 @@ export default function HomePage() {
 </Box>
             <TabPanel value={value} index={0}>
                 <EventItem name={"Carol Baskins"} link={''} description={'Such a lovely day today'} icon={<Avatar className={'primary-bg'} sx={{marginRight:2}}/>} />
-                <EventItem name={"Music Group"} link={''} description={'Karaoke night anyone?'} icon={<MusicNoteIcon className={'primary'} sx={{marginRight:2}}/>} />
+                <EventItem name={"Music Group"} link={''} description={'Karaoke night anyone?'} icon={<HeadphonesIcon className={'primary'} sx={{marginRight:2}}/>} />
                 {
                     [1,2].map((item)=><EventItem/>)
                 }
@@ -96,11 +96,11 @@ export default function HomePage() {
                 }
             </TabPanel>
 
-            {/*<Link to={'/home/create'}>*/}
+            <Link to={'/home/add-post'}>
                 <Fab sx={{position:'sticky', bottom:70, right:10,float:'right',background:'#10427A'}} color={'primary'} aria-label="edit">
                     <AddIcon/>
                 </Fab>
-            {/*</Link>*/}
+            </Link>
         </Box>
     );
 }

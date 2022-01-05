@@ -11,6 +11,7 @@ import LabelBottomNavigation from './components/Footer';
 import NearYou from "./pages/events/near_you";
 import EventDetail from "./pages/events/detail";
 import CreateEvent from "./pages/events/create";
+import AddPost from "./pages/home/add_post";
 
 const footerStyle = {
   position: "absolute",
@@ -40,6 +41,7 @@ function App() {
 
 
                 <Route path={'/groups'} element={<GroupsPage/>} />
+                <Route path={'/home/add-post'} element={<AddPost/>} />
                 <Route path={'/home'} element={<HomePage/>} />
                 <Route path="/" element={<Navigate to={"/home"}/>}/>
 
