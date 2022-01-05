@@ -58,7 +58,7 @@ export default function AddPost({
                 </div>
                 <br/>
 
-                <Link to={'/events'}>
+                <Link to={'/home'}>
                     <Button fullWidth variant={'contained'} className={'primary-bg'}>
                         POST
                     </Button>

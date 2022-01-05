@@ -7,9 +7,9 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import SearchIcon from '@mui/icons-material/SearchOutlined'
 import AddIcon from '@mui/icons-material/Add';
-import {Link} from "react-router-dom";
 import EventItem from "../events/event";
 import Fab from "@mui/material/Fab";
+import {Link} from 'react-router-dom'
 import Avatar from "@mui/material/Avatar";
 import HeadphonesIcon from '@mui/icons-material/Headphones';
 
@@ -77,8 +77,8 @@ export default function HomePage() {
                 </Tabs>
 </Box>
             <TabPanel value={value} index={0}>
-                <EventItem name={"Carol Baskins"} link={''} description={'Such a lovely day today'} icon={<Avatar className={'primary-bg'} sx={{marginRight:2}}/>} />
-                <EventItem name={"Music Group"} link={''} description={'Karaoke night anyone?'} icon={<HeadphonesIcon className={'primary'} sx={{marginRight:2}}/>} />
+                <EventItem name={"Carol Baskins"} link={'/home/posts/642334'} description={'Such a lovely day today'} icon={<Avatar className={'primary-bg'} sx={{marginRight:2}}/>} />
+                <EventItem name={"Music Group"} link={'/groups/postdiscussion'} description={'Karaoke night anyone?'} icon={<HeadphonesIcon className={'primary'} sx={{marginRight:2}}/>} />
                 {
                     [1,2].map((item)=><EventItem/>)
                 }
