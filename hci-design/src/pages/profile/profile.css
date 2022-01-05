@@ -1,45 +1,30 @@
-.title{
+.profile-name{
     font-family: Roboto;
     font-style: normal;
     font-weight: 300;
-    font-size: 30px;
-    line-height: 35px;
+    font-size: 22px;
+    line-height: 26px;
     display: flex;
     align-items: center;
-    text-align: center;
     letter-spacing: -0.015em;
 
     color: #10427A;
 }
 
-.title-container{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4px 20px;
-}
-
-
-.tab-text{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 200;
-    font-size: 20px;
-    line-height: 23px;
+.profile-card{
+    background: #FFFFFF;
+    border: 1px solid #10427A;
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding: 12px 24px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: center;
-    letter-spacing: -0.015em;
-
-    color: #10427A;
+    justify-content: center;
+    color: #10427A
 }
 
-
-.primary{
-    color: #10427A !important;
-}
-
-.desc-title{
+.bio-title{
     font-family: Roboto;
     font-style: normal;
     font-weight: 300;
@@ -52,7 +37,7 @@
     color: #10427A;
 }
 
-.desc{
+.bio{
     font-family: Roboto;
     font-style: normal;
     font-weight: 200;

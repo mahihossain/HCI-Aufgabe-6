@@ -5,7 +5,7 @@ export default function MobileLayout (props) {
         style={{
             position: 'relative',
             margin: 'auto',
-            maxWidth: 415,
+            maxWidth: 400,
             height: '100%',
             backgroundColor:'#fff'
         }}

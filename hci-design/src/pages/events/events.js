@@ -1,37 +1,95 @@
-import {Col, Row, Space, Tabs} from "antd";
-import SearchOutlined from "@ant-design/icons/es/icons/SearchOutlined";
-import {Content} from "antd/es/layout/layout";
+import * as React from 'react';
+import PropTypes from 'prop-types';
 import './events.css'
-import {useState} from "react";
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import SearchIcon from '@mui/icons-material/SearchOutlined'
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import {Room} from "@mui/icons-material";
+import {Link} from "react-router-dom";
+import EventItem from "./event";
+import Fab from "@mui/material/Fab";
 
-export default function EventsPage(props) {
+function TabPanel(props) {
+    const { children, value, index, ...other } = props;
 
-    const [tab,setTab] = useState("1")
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`simple-tabpanel-${index}`}
+            aria-labelledby={`simple-tab-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <Box sx={{ p: 3 }}>
+                    <Typography>{children}</Typography>
+                </Box>
+            )}
+        </div>
+    );
+}
 
-    const {TabPane} = Tabs
+TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired,
+};
 
-    return(
-        <Content style={{padding:16}}>
-            <Row justify={'space-between'} align={'center'} >
-                <Col>
-            <div className={'title'}>
-                Events
+function a11yProps(index) {
+    return {
+        id: `simple-tab-${index}`,
+        'aria-controls': `simple-tabpanel-${index}`,
+    };
+}
+
+const titleStyle = {
+    display:'flex',
+    justifyContent:'space-between',
+    alignItems: 'center',
+    padding: '4px 20px'
+}
+
+export default function EventsPage() {
+    const [value, setValue] = React.useState(0);
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
+    return (
+        <Box sx={{ width: '100%',height:'100%', position:'relative' }}>
+
+            <div style={titleStyle}>
+                <span className={'title'}>Events</span>
+                <SearchIcon/>
             </div>
-                </Col>
-                <Col>
-                <SearchOutlined style={{fontSize: 24}} className={'primary'} />
-                </Col>
 
-            </Row>
-            <Tabs defaultActiveKey="1" activeKey={tab} onChange={(val)=>setTab(val)}>
-                <TabPane tab={<span className={'tab-text'}>Upcoming</span>} key="1" >
-                    Content of Tab Pane 1
-                </TabPane>
-                <TabPane tab={<span className={'tab-text'}>Your Events</span>} key="2">
-                    Content of Tab Pane 2
-                </TabPane>
-            </Tabs>
-        </Content>
-    )
+            <Box style={{display:'flex',alignItems:'center'}}>
+                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+                    <Tab className={'tab-text'}  label="Upcoming" {...a11yProps(0)} />
+                    <Tab className={'tab-text'}  label="My Events" {...a11yProps(1)} />
+                </Tabs>
 
+                <Link className={'tab-text'}  to={'/events/near-you'} style={{display:'flex',alignItems:'center',textDecoration:'none'}}><Room/> Near you</Link>
+            </Box>
+            <TabPanel value={value} index={0}>
+                {
+                    [1,2,3,4,5].map((item)=><EventItem description={'Hiking event tomorrow'}/>)
+                }
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+                {
+                    [1,2,3,4,5,6,7].map((item)=><EventItem/>)
+                }
+            </TabPanel>
+            <Link to={'/events/create'}>
+            <Fab sx={{position:'sticky', right:10, bottom:70,float:'right',background:'#10427A'}} color={'primary'} aria-label="edit">
+                <CalendarTodayIcon/>
+            </Fab>
+            </Link>
+        </Box>
+    );
 }
