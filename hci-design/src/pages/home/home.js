@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import SearchIcon from '@mui/icons-material/SearchOutlined'
 import AddIcon from '@mui/icons-material/Add';
-import {Link} from "react-router-dom";
 import EventItem from "../events/event";
 import Fab from "@mui/material/Fab";
 import Avatar from "@mui/material/Avatar";

@@ -10,6 +10,8 @@ import GroupsPage from "./pages/groups/groups";
 import LabelBottomNavigation from './components/Footer';
 import NearYou from "./pages/events/near_you";
 import EventDetail from "./pages/events/detail";
+import GroupDetail from "./pages/groups/detail";
+import GroupPostDiscussion from "./pages/groups/postDiscussion"
 import CreateEvent from "./pages/events/create";
 
 const footerStyle = {
@@ -40,6 +42,8 @@ function App() {
 
 
                 <Route path={'/groups'} element={<GroupsPage/>} />
+                <Route path={'/groups/:id'} element={<GroupDetail/>}/>
+                <Route path={'groups/postdiscussion'} element={<GroupPostDiscussion/>} />
                 <Route path={'/home'} element={<HomePage/>} />
                 <Route path="/" element={<Navigate to={"/home"}/>}/>
 
