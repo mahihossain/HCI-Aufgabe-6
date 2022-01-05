@@ -52,13 +52,6 @@ export default function EventDetail({
 
                 <br/>
                 <div>
-                    Date & Time
-                    <br/>
-                    <div className={'desc'}>
-                        10:30 pm 25 December 2021</div>
-                </div>
-                <br/>
-                <div>
                     Post
                 </div>
                 <TextField fullWidth />
