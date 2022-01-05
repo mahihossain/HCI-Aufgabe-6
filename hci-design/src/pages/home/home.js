@@ -77,13 +77,13 @@ export default function HomePage() {
                 </Tabs>
 </Box>
             <TabPanel value={value} index={0}>
-                <EventItem name={"Carol Baskins"} description={'Such a lovely day today'} icon={<Avatar className={'primary-bg'} sx={{marginRight:2}}/>} />
-                <EventItem name={"Music Group"} description={'Karaoke night anyone?'} icon={<MusicNoteIcon className={'primary'} sx={{marginRight:2}}/>} />
+                <EventItem name={"Carol Baskins"} link={''} description={'Such a lovely day today'} icon={<Avatar className={'primary-bg'} sx={{marginRight:2}}/>} />
+                <EventItem name={"Music Group"} link={''} description={'Karaoke night anyone?'} icon={<MusicNoteIcon className={'primary'} sx={{marginRight:2}}/>} />
                 {
                     [1,2].map((item)=><EventItem/>)
                 }
 
-                <EventItem name={"Hector Bauer"} description={'Are there new lockdown restrictions announced?'} icon={<Avatar className={'primary-bg'} sx={{marginRight:2}}/>} />
+                <EventItem name={"Hector Bauer"} link={''} description={'Are there new lockdown restrictions announced?'} icon={<Avatar className={'primary-bg'} sx={{marginRight:2}}/>} />
             </TabPanel>
             <TabPanel value={value} index={1}>
                 {

@@ -8,13 +8,14 @@ import {Link} from "react-router-dom";
 export default function EventItem({
     name = "Hiking Event",
     description="Saarschleife hike all-day tour",
+    link = '/events/8474638',
     icon=<CalendarTodayIcon sx={{paddingRight:2,color:'#10427A'}}/>,
     small = false
                                   }){
 
 
     return (
-        <Link to={'/events/8474638'} >
+        <Link to={link} >
         <Card style={{alignItems:'start',color:'#10427A'}} sx={{paddingX:2,paddingY:1,marginY:2,boxShadow:'0px 0px 2px #10427A'}}>
             <Box sx={{display:'flex',alignItems:'center',paddingY:1}}>{icon}<Box sx={{fontSize:18}}>
             {

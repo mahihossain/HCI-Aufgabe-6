@@ -1,5 +1,5 @@
 import Container from "@mui/material/Container";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import * as React from "react";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import SearchIcon from '@mui/icons-material/SearchOutlined'
@@ -19,13 +19,18 @@ export default function EventDetail({
     ...props
                                     }) {
 
+    const navigate = useNavigate()
+
     const [tab,setTab] = useState(0)
+
+    const [joined,setJoined] = useState(false)
+
 
     return(
         <div>
             <div className={'title-container'}>
-                <span className={'title'}><Link to={'/events'}><ArrowBackIosIcon/></Link> Hiking Event</span>
-                <SearchIcon/>
+                <span className={'title'}><Link to={'/'} onClick={()=>navigate(-1)}><ArrowBackIosIcon/></Link> Hiking Event</span>
+                <Button variant={joined?'outlined':'contained'} onClick={()=>setJoined(!joined)} className={!joined &&'primary-bg'}>{joined?'JOINED':'JOIN'}</Button>
             </div>
             <br/>
             <Container className={'desc-title'}>
@@ -67,7 +72,7 @@ export default function EventDetail({
                         <Tab label="Discussion"  />
                         <Tab label="Announcements"  />
                     </Tabs>
-</Box>
+            </Box>
             <EventItem
             icon={<Avatar sx={{marginRight:2,background:'#10427A'}}/>}
             name={'Jodie Turner'}
